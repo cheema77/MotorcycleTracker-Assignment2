@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MotorcycleTracker.Models.Motorcycle>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inventory of Store</h2>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+<p>
+        @Html.ActionLink("Add Details", "Create", "item", new { @class = "btn btn-primary" })
+    </p>
+    }
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>
+                Motorcycle Name
+            </th>
+            <th>
+                Make Year
+            </th>
+            <th>
+                Company
+            </th>
+            <th>
+                Action Links
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MakeYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.MotorId }, new { @class = "btn btn-success", @style = "margin-left:5px;" })
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MotorId }, new { @class = "btn btn-warning", @style = "margin-left:5px;" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MotorId }, new { @class = "btn btn-danger", @style = "margin-left:5px;" })
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -1,0 +1,39 @@
+﻿@model MotorcycleTracker.Models.Motorcycle
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Motorcycle</h4>
+    <hr />
+    <table class="table table-hover table-striped"">
+        <tr>
+            <th>Motorcycle Name</th>
+            <th>Make Year</th>
+            <th>Company</th>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.MotorName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MakeYear)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Company)
+            </td>
+        </tr>
+    </table>
+</div>
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Edit ", "Edit", new { id = Model.MotorId }, new{ @class= "btn btn-primary"})
+    }
+        @Html.ActionLink("Back to List", "Index", new { id = Model.MotorId }, new{ @class= "btn btn-danger", @style="margin-left:10px;"})
+    </p>
