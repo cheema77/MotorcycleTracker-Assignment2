@@ -198,15 +198,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="image\download.jpg" />
     <Content Include="image\H4.jpg" />
     <Content Include="image\MC-enthusiasts-logo.png" />
-    <Content Include="image\s1.jpg" />
-    <Content Include="image\s2.jpg" />
-    <Content Include="image\s3.jpg" />
-    <Content Include="image\s4.jpg" />
-    <Content Include="image\s5.jpg" />
-    <Content Include="image\s6.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
