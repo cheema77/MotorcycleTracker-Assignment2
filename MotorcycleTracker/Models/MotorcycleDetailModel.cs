@@ -37,25 +37,7 @@ namespace MotorcycleTracker.Models
                 .WithRequired(e => e.AspNetUser)
                 .HasForeignKey(e => e.UserId);
 
-            modelBuilder.Entity<MotorcycleDetail>()
-                .Property(e => e.MotorBrand)
-                .IsFixedLength();
-
-            modelBuilder.Entity<MotorcycleDetail>()
-                .Property(e => e.MotorModel)
-                .IsFixedLength();
-
-            modelBuilder.Entity<MotorcycleDetail>()
-                .Property(e => e.Country)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Motorcycle>()
-                .Property(e => e.MotorName)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Motorcycle>()
-                .Property(e => e.Company)
-                .IsFixedLength();
+           
 
             modelBuilder.Entity<Motorcycle>()
                 .HasMany(e => e.MotorcycleDetails)

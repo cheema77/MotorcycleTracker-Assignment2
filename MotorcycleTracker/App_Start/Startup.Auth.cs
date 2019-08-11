@@ -46,23 +46,23 @@ namespace MotorcycleTracker
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            app.UseMicrosoftAccountAuthentication(
-                clientId: "4434b3b3-7196-471b-bec8-9d863f0ccc3e",
-                clientSecret: "k?ecB52HH0rbPHrt9/@UuOCU]51CFR1H");
+            //app.UseMicrosoftAccountAuthentication(
+            //    clientId: "683935586620-c36sov89qhqs5nk96asnlrtcsitu349m.apps.googleusercontent.com",
+            //    clientSecret: "GWsmlBGGPB01fUAM3KKXrRbx");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "2340371762946270",
+               appSecret: "bc4eb887d91762b76fd596f4d7d963f5");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "683935586620-c36sov89qhqs5nk96asnlrtcsitu349m.apps.googleusercontent.com",
+                ClientSecret = "GWsmlBGGPB01fUAM3KKXrRbx"
+            });
         }
     }
 }
